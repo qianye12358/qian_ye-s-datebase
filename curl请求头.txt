@@ -1,0 +1,20 @@
+Microsoft Windows [版本 10.0.26200.9457]
+(c) Microsoft Corporation。保留所有权利。
+
+C:\Users\mih>curl -X POST -d "codename=JOKER"http://110.42.112.160:38517/api/challenge/handshake
+curl: (2) no URL specified
+curl: try 'curl --help' for more information
+
+C:\Users\mih>curl -X POST -d "codename=JOKER" http://110.42.112.160:38517/api/challenge/handshake
+{"message":"握手完成，回到聊天窗口吧！","ok":true}
+
+C:\Users\mih>curl -H "X-Forwarded-For:127.0.0.1" http://110.42.112.160:38517/api/challenge/trust
+{"message":"验证通过，回到聊天窗口吧！","ok":true,"stage":2}
+
+C:\Users\mih>curl -H "Via:phantom-proxy" http://110.42.112.160:38517/api/challenge/trust
+{"message":"验证通过，回到聊天窗口吧！","ok":true,"stage":3}
+
+C:\Users\mih>curl -H "Referer:https://mementos.local/" http://110.42.112.160:38517/api/challenge/trust
+{"message":"验证通过，回到聊天窗口吧！","ok":true,"stage":4}
+
+C:\Users\mih>https://mementos.local/https://mementos.local/
